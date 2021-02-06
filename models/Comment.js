@@ -5,9 +5,11 @@ const CommentSchema = new Schema({
   writtenBy: {
     // this is the "col name"
     type: String, // These are the field params
+    required: true,
   },
   commentBody: {
     type: String,
+    required: true,
   },
   createdAt: {
     type: Date,

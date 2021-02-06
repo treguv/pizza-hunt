@@ -6,9 +6,13 @@ const PizzaSchema = new Schema(
     // making the schema model
     pizzaName: {
       type: String,
+      required: true,
+      trim: true,
     },
     createdBy: {
       type: String,
+      required: true,
+      trim: true,
     },
     createdAt: {
       type: Date,
@@ -17,6 +21,8 @@ const PizzaSchema = new Schema(
     },
     size: {
       type: String,
+      required: true,
+      enum: ["Personal", "Small", "Medium", "Large", "Extra Large"], // this is the size options we will accept
       default: "Large",
     },
     toppings: [], // [] signifies an array. Can also use Array keyword

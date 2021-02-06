@@ -42,7 +42,7 @@ const commentController = {
           // remove the comment from the post
           { _id: params.pizzaId }, //find pizza with this i d
           { $pull: { comments: params.commentId } }, // remove the comment with this id
-          { new: true } //return new
+          { new: true, runValidators: true } //return new
         );
       })
       .then((dbPizzaData) => {
